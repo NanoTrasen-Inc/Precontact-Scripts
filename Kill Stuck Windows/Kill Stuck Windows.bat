@@ -47,7 +47,6 @@ exit /b
 :: Main function - Add window titles here
 :Main
 echo Checking for stuck DCS Server windows...
-echo.
 
 :: Kill processes that failed to start due because an instance was already running
 call :KillWindow "Can't run"
