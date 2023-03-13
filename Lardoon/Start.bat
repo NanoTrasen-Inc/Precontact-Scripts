@@ -6,8 +6,4 @@ setlocal EnableDelayedExpansion
 set script_dir=%~dp0
 set script_dir=%script_dir:~0,-1%
 
-:start
-start "Lardoon" /wait /belownormal "%script_dir%\lardoon.exe" serve --bind 0.0.0.0:3883
-timeout 5
-
-goto :start
+start "Lardoon" /d "%script_dir%" /min /belownormal "%script_dir%\lardoon.exe" serve --bind 0.0.0.0:3883
