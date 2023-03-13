@@ -13,3 +13,7 @@ I use this to clean up my workstation at the end of a session, or between game r
 Kills all DCS related processes, including support programs like TrackIR5 and SimAppPro. -- Must be run as admin!
 
 I use this one after every play session so my workstation doesn't stay on all night. Apparently TrackIR5.exe sometimes inhibits system sleep.
+
+# Set DCS to high priority
+
+Sets the DCS.exe process to high priority for better performance.
