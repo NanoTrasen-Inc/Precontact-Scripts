@@ -1,0 +1,52 @@
+{
+  "servers": [
+    {
+      "name": "Return Precontact - Caucasus Foothold",
+      "hostname": "dcs1.precontact.net",
+      "port": 42614,
+      "radar_refresh_rate": 5,
+      "enable_friendly_ground_units": true,
+      "enable_enemy_ground_units": true
+    },
+    {
+      "name": "Return Precontact - Syria Foothold",
+      "hostname": "dcs1.precontact.net",
+      "port": 42624,
+      "radar_refresh_rate": 5,
+      "enable_friendly_ground_units": true,
+      "enable_enemy_ground_units": true
+    },
+    {
+      "name": "Return Precontact - Persian Foothold",
+      "hostname": "dcs2.precontact.net",
+      "port": 42634,
+      "radar_refresh_rate": 5,
+      "enable_friendly_ground_units": true,
+      "enable_enemy_ground_units": true
+    },
+    {
+      "name": "Return Precontact - Alternate",
+      "hostname": "dcs2.precontact.net",
+      "port": 42644,
+      "radar_refresh_rate": 5,
+      "enable_friendly_ground_units": true,
+      "enable_enemy_ground_units": true
+    },
+    {
+      "name": "Return Precontact - Training Sandbox",
+      "hostname": "dcs2.precontact.net",
+      "port": 42654,
+      "radar_refresh_rate": 5,
+      "enable_friendly_ground_units": true,
+      "enable_enemy_ground_units": true
+    },
+    {
+      "name": "Return Precontact - Event",
+      "hostname": "dcs2.precontact.net",
+      "port": 42664,
+      "radar_refresh_rate": 5,
+      "enable_friendly_ground_units": true,
+      "enable_enemy_ground_units": true
+    }
+  ]
+}
