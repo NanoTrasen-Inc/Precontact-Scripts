@@ -1,2 +1,2 @@
 # Precontact-Scripts
-Scripts and tools for Return Pre-Contact DCS Servers
+Scripts and tools for the Return Pre-Contact DCS Servers
