@@ -10,7 +10,7 @@ I use this to clean up my workstation at the end of a session, or between game r
 
 # Kill DCS (All)
 
-Kills all DCS related processes, including support programs like TrackIR5 and SimAppPro. -- Must be run as admin!
+Kills all DCS related processes, including support programs like TrackIR5, VoiceAttack and SimAppPro. -- Must be run as admin!
 
 I use this one after every play session so my workstation doesn't stay on all night. Apparently TrackIR5.exe sometimes inhibits system sleep.
 

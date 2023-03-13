@@ -12,5 +12,9 @@ echo TrackIR5 has been killed
 :: Kill SimAppPro
 taskkill /f /im "SimAppPro.exe"
 echo SimAppPro has been killed
+:: Kill VoiceAttack
+taskkill /f /im "VoiceAttack.exe"
+echo VoiceAttack has been killed
+
 
 timeout 1
