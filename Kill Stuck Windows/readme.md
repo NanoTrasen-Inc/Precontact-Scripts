@@ -1,6 +1,6 @@
 # Kill Stuck Windows
 
-Kill process windows that contain specific text strings. Useful for killing stuck server instances that got held up with "Can't run" or "Login Failed".
+Kill DCS process windows that contain specific text strings. Useful for killing stuck server instances that got held up with "Can't run" or "Login Failed".
 
 ## Usage
 
