@@ -1,3 +1,3 @@
 @echo off
 git pull
-timeout 3
+timeout 2
