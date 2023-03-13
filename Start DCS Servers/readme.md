@@ -1,3 +1,3 @@
 # Start DCS Servers
 
-Some example bat files to start DCS server instances.
+Some example bat files to start multiple DCS server instances.
