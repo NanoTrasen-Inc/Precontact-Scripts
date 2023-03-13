@@ -1,4 +1,4 @@
 @echo off
 taskkill /f /im dcs.exe
 
-timeout 5
+timeout 3
