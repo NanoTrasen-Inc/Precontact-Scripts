@@ -53,6 +53,6 @@ call :KillWindow "Can't run"
 :: Kill processes that failed to login
 call :KillWindow "Login Failed"
 :: Kill processes stuck on the login screen. Probably best not to though, as servers normally don't get stuck here unless there's an actual problem with the credentials
-@REM call :KillWindow "DCS Login"
+call :KillWindow "DCS Login"
 
 exit /b
