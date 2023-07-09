@@ -15,6 +15,9 @@ echo SimAppPro has been killed
 :: Kill VoiceAttack
 taskkill /f /im "VoiceAttack.exe" > nul 2>&1
 echo VoiceAttack has been killed
+:: Kill TheWay
+taskkill /f /im "TheWay.exe" > nul 2>&1
+echo TheWay has been killed
 
 
 timeout 1
