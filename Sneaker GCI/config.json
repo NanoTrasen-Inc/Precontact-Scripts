@@ -25,7 +25,7 @@
       "enable_enemy_ground_units": true
     },
     {
-      "name": "Return Precontact - Alternate",
+      "name": "Return Precontact - Pretense",
       "hostname": "dcs2.precontact.net",
       "port": 42644,
       "radar_refresh_rate": 5,
