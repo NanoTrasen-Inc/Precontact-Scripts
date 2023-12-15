@@ -10,7 +10,7 @@ taskkill /f /im "dcs.exe" > nul 2>&1
 echo DCS has been killed
 
 :: Clear shaders
-rmdir /s /q "%dcs_data_dir%\fxo" "%dcs_data_dir%\metashaders2"
+rmdir /s /q "%dcs_data_dir%\fxo" "%dcs_data_dir%\metashaders2" > nul 2>&1
 echo Shaders have been cleared
 
 timeout 2
