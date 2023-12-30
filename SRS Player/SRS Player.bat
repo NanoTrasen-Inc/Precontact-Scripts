@@ -12,7 +12,7 @@ set srs-exe=C:\Program Files\DCS-SimpleRadio-Standalone\DCS-SR-ExternalAudio.exe
 set servernumber=1
 set freq=305.0
 set modulation=AM
-set volume=0.25
+set volume=0.75
 set displayname=Igla Dude
 
 :: Prompt for variables
