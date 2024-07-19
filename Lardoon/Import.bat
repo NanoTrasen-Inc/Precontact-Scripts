@@ -6,7 +6,7 @@ setlocal EnableDelayedExpansion
 set script_dir=%~dp0
 set script_dir=%script_dir:~0,-1%
 
-call "%script_dir%\..\Sync Tacview Files\Sync.bat"
+@REM call "%script_dir%\..\Sync Tacview Files\Sync.bat"
 
 echo Importing Tacview files into lardoon...
 start "Lardoon" /d "%script_dir%" /wait /min /low "%script_dir%\lardoon.exe" import -p "D:\Tacview"
