@@ -22,12 +22,9 @@ for %%f in ("%script_dir%\*.mp3") do (
 		:: Play audio
 		if not exist "%srs-exe%" (
 			echo [ERROR] SRS External Audio executable not found at "%srs-exe%"
-			pause
-			exit /b 1
+			timeout 5
 		)
 		"%srs-exe%" --file="%%f" -f %freq% -m "%modulation%" -c 2 -n "%displayname%" -v %volume% -p %port% -R
-
-		goto :replay_file
 	)
 )
 goto :loop
