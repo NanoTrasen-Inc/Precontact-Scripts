@@ -3,7 +3,9 @@
 
 # to decrypt the dpapi Credentials, you have to be the same user as the wireguard tunnel service, i.e. "nt authority\system", check with "whoami"
 # this script might be called by task scheduler as 
-#  powershell -NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -Command "Get-ChildItem -File 'c:\Program Files\wireguard\data\configurations\*.dpapi' | foreach {& C:\<path to script>\wireguard_reresolve-dns.ps1 $_.FullName}"
+#  powershell -NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -Command "Get-ChildItem -File 'c:\Program Files\wireguard\data\configurations\*.dpapi' | foreach {& 'C:\Users\server\Precontact-Scripts\Wireguard-Reresolve-DNS\reresolve-dns.ps1' $_.FullName}"
+# or on raw .conf files:
+# powershell -NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -Command "Get-ChildItem -File 'c:\users\server\wireguard\*.conf' | foreach {& 'C:\Users\server\Precontact-Scripts\Wireguard-Reresolve-DNS\reresolve-dns.ps1' $_.FullName}"
 # if you want to try it in cmd, remember to elevate the user, i.e. with psexec from sysutils
 #  psexec -s -i powershell -NoPr...
 
@@ -12,13 +14,16 @@ Add-Type -AssemblyName System.Security
 
 Set-Variable CONFIG_FILE -Value $args[0].ToString().Trim('"')
 
-$byteCrypted = ((Get-Content -LiteralPath $CONFIG_FILE -Encoding Byte -ReadCount 0))
+$isDpapiConfig = $CONFIG_FILE -match '\.dpapi$'
+if ($isDpapiConfig) {
+  $byteCrypted = (Get-Content -LiteralPath $CONFIG_FILE -Encoding Byte -ReadCount 0)
+  $config = [System.Security.Cryptography.ProtectedData]::Unprotect($byteCrypted,$null,[System.Security.Cryptography.DataProtectionScope]::LocalMachine)
+  $config = [System.Text.UTF8Encoding]::UTF8.GetString($config)
+} else {
+  $config = Get-Content -LiteralPath $CONFIG_FILE -Raw -Encoding UTF8
+}
 
-$config = [System.Security.Cryptography.ProtectedData]::Unprotect($byteCrypted,$null,[System.Security.Cryptography.DataProtectionScope]::LocalMachine)
-
-$config = [System.Text.UTF8Encoding]::UTF8.GetString($config)
-
-Set-Variable Interface -Option Constant -Value $(if ($CONFIG_FILE -match '.?([a-zA-Z0-9_=+.-]{1,18})\.conf.dpapi$') { $matches[1] } else { $null })
+Set-Variable Interface -Option Constant -Value $(if ($CONFIG_FILE -match '.?([a-zA-Z0-9_=+.-]{1,18})\.conf(?:\.dpapi)?$') { $matches[1] } else { $null })
 
 function process_peer () {
   if (-not $PEER_SECTION -or ($null -eq $PUBLIC_KEY) -or ($null -eq $ENDPOINT)) { return }
